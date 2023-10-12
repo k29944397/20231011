@@ -11,11 +11,16 @@ const router = createRouter({
     },
     {
       path: '/VtextAndVModel',
-      name: 'VtexrAndVModel',
+      name: 'VtextAndVModel',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../components/VtextAndVModel.vue')
+    },
+    {
+      path:'/Vfor',
+      name:'Vfor',
+      component:()=>import('../views/Vfor.vue')
     }
   ]
 })

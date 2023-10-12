@@ -16,13 +16,9 @@ export default{
 </script>
 
 <template>
-<RouterLink to="/">Home</RouterLink>
-<RouterLink to="/VtexrAndVModel" >Vtext&VModel</RouterLink>
+      <h1> H O M E</h1>
 </template>
 
-<style>
-.headershow{
-  height: 100vh;
-  width: 100vw;
-}
+<style lang="scss" scoped>
+
 </style>
