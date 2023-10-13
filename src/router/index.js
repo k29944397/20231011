@@ -21,6 +21,16 @@ const router = createRouter({
       path:'/Vfor',
       name:'Vfor',
       component:()=>import('../views/Vfor.vue')
+    },
+    {
+      path:'/Von',
+      name:'Von',
+      component:()=>import('../views/Von.vue')
+    },
+    {
+      path:'/workS',
+      name:'workS',
+      component:()=>import('../views/WorkS.vue')
     }
   ]
 })

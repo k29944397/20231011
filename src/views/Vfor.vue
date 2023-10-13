@@ -34,9 +34,8 @@ export default{
     <div class="area2">
         <h2>PINK</h2>
         <div class="area3">
-            <h3>Title<br> xxxxxxxxxxxxxxxxxxxxxxxxx</h3>
+            <h3>在Vue.js安裝Bootstrap<br> 1.CMD輸入npm install bootstrap @popperjs/core <br> 2.</h3>
         </div>
-
     </div>
 
 </template>

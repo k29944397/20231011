@@ -13,6 +13,11 @@ export default{
         <RouterLink to="/">Home<br></RouterLink>
         <RouterLink to="/VtextAndVModel" >Vtext&VModel<br></RouterLink>
         <RouterLink to="/Vfor" >V-for</RouterLink>
+        <span>--</span>
+        <RouterLink to="/Von" >V-on</RouterLink>
+        <span>--</span>
+        <RouterLink to="/workS" >甜點</RouterLink>
+
     </nav>
 
 </template>
