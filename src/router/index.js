@@ -31,6 +31,11 @@ const router = createRouter({
       path:'/workS',
       name:'workS',
       component:()=>import('../views/WorkS.vue')
+    },
+    {
+      path:'/vbind',
+      name:'vbind',
+      component:()=>import('../views/Vbind.vue')
     }
   ]
 })

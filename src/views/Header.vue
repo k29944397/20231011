@@ -1,8 +1,16 @@
 <script>
 import {RouterLink} from 'vue-router'
 export default{
+    data(){
+        //值
+    },
     components:{
+        //匯入
         RouterLink
+    },
+    methods:{
+        //公式
+        
     }
 }
 
@@ -17,6 +25,8 @@ export default{
         <RouterLink to="/Von" >V-on</RouterLink>
         <span>--</span>
         <RouterLink to="/workS" >甜點</RouterLink>
+        <span>--</span>
+        <RouterLink to="/vbind" >V-bind</RouterLink>
 
     </nav>
 
