@@ -59,6 +59,22 @@ export default{
         <img :src="imgArr[5]" alt=""><img :src="imgArr[6]" alt="">
         <img :src="imgArr[7]" alt="">
     </div>
+    <p>用input radio&v-model更改圖片</p>
+    <label for="">方案A</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/cf47f9fac4ed3037ff2a8ea83204e32aff8fb5f3.png" v-model="imgArr[3]">
+    <label for="">方案B</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/3245e4f8c04aa0619cb31884dbf123c6918b3700.png" v-model="imgArr[3]">
+    <label for="">方案C</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/0186d64c5773c8d3d03cd05dc79574b2d2798d4f.png" v-model="imgArr[3]">
+    <!-- <label for="">原圖</label>
+    <input type="radio" value="../../pic/4.png" v-model="imgArr[3]"> -->
+    <br>
+    <label for="">方案A</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/cf47f9fac4ed3037ff2a8ea83204e32aff8fb5f3.png" v-model="imgArr[4]">
+    <label for="">方案B</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/3245e4f8c04aa0619cb31884dbf123c6918b3700.png" v-model="imgArr[4]">
+    <label for="">方案C</label>
+    <input type="radio" value="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/0186d64c5773c8d3d03cd05dc79574b2d2798d4f.png" v-model="imgArr[4]">
 </template>
 
 <style lang="scss" >
@@ -77,8 +93,10 @@ export default{
 .waterf{
     border: 1px solid red;
     margin: 20px;
-    width: 600px;
+    width: 800px;
     height: 100%;
+    column-gap: 50px;
+    column-count: 4;
     img{
         margin: 20px;
         width: 150px;
@@ -88,4 +106,12 @@ export default{
             height: 258px;
         }
 }
+label{
+    font-size: 24pt;
+}
+p{
+    font-weight: bold;
+    font-size: 24pt;
+}
+
 </style>

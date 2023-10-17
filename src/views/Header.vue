@@ -19,7 +19,8 @@ export default{
 <template>
     <nav class="topnav">
         <RouterLink to="/">Home<br></RouterLink>
-        <RouterLink to="/VtextAndVModel" >Vtext&VModel<br></RouterLink>
+        <RouterLink to="/VtextAndVModel" >Vtext&VModel</RouterLink>
+        <span>--</span>
         <RouterLink to="/Vfor" >V-for</RouterLink>
         <span>--</span>
         <RouterLink to="/Von" >V-on</RouterLink>
@@ -27,7 +28,9 @@ export default{
         <RouterLink to="/workS" >甜點</RouterLink>
         <span>--</span>
         <RouterLink to="/vbind" >V-bind</RouterLink>
-
+        <span>--</span>
+        <RouterLink to="/vifAndvshow" >V-if&V-show</RouterLink>
+        <span>--</span>
     </nav>
 
 </template>

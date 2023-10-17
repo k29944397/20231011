@@ -15,5 +15,8 @@ export default{
     width: 200px;
     height: 200px;
     background-color: #d47575;
+    :hover{
+        border-collapse: collapse;
+    }
 }
 </style>
