@@ -31,6 +31,9 @@ export default{
         <span>--</span>
         <RouterLink to="/vifAndvshow" >V-if&V-show</RouterLink>
         <span>--</span>
+        <RouterLink to="/HwHome" >HwHome</RouterLink>
+        <span>--</span>
+        <RouterLink to="/Props" >Props</RouterLink>
     </nav>
 
 </template>

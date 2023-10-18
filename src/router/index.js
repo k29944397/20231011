@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/Homeview.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +41,27 @@ const router = createRouter({
       path:'/vifAndvshow',
       name:'vifAndvshow',
       component:()=>import('../views/VifAndvshow.vue')
+    },
+    {
+      path:'/HwHeader',
+      name:'HwHeader',
+      component:()=>import('../views/HwHeader.vue'),
+      children:[
+        {
+          path:'/HwHome',
+          component:()=>import('../views/HwHome.vue')
+        }
+      ]
+    },
+    {
+      path:'/Props',
+      name:'Props',
+      component:()=>import('../views/Props.vue')
+    },
+    {
+      path:"/",
+      name:"#",
+      component:()=>import('')
     }
   ]
 })

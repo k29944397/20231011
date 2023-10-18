@@ -39,6 +39,12 @@ export default{
             else{
                 showText.innerText = "請輸入範圍內的數字";
             }
+        },
+        write(){
+            console.log(this.text)
+        },
+        goOhterWat(){
+            this.$router.push("/Vfor")
         }
     }
 }
