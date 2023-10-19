@@ -58,11 +58,11 @@ const router = createRouter({
       name:'Props',
       component:()=>import('../views/Props.vue')
     },
-    {
-      path:"/",
-      name:"#",
-      component:()=>import('')
-    }
+    // {
+    //   path:"/",
+    //   name:"#",
+    //   component:()=>import('')
+    // }
   ]
 })
 
