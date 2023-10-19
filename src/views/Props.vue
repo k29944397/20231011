@@ -3,14 +3,23 @@ import child from "../components/child.vue";
 export default{
     data(){
         return{
-            propsObj:{
-                name:"mary",
-                age:58,
-                email:"xxx@gggmail.com"
-            },
+            // propsObj:{
+            //     name:"mary",
+            //     age:58,
+            //     email:"xxx@gggmail.com"
+            // },
             page:1,
-            genderText:["男性","女性"],
-            personal:[],
+            // genderText:["男性","女性"],
+            // personal:[],
+            personal:{
+                name:"",
+                phone:"",
+                email:"",
+                address:"",
+                school:"",
+                gender:"",
+                favorite:"",
+            }
         }
     },
     methods:{
@@ -34,27 +43,27 @@ export default{
         <!-- 填寫註冊帳戶資訊版面 -->
         <h1>註冊</h1>
         <label for="">姓名</label>
-        <input type="text" v-model="personal[0]">
+        <input type="text" v-model="personal.name">
         <br>
         <label for="">電話</label>
-        <input type="text" v-model="personal[1]">
+        <input type="text" v-model="personal.phone">
         <br>
         <label for="">信箱</label>
-        <input type="text" v-model="personal[2]">
+        <input type="text" v-model="personal.email">
         <br>
         <label for="">地址</label>
-        <input type="text" v-model="personal[3]">
+        <input type="text" v-model="personal.address">
         <br>
         <label for="">學校</label>
-        <input type="text" v-model="personal[4]">
+        <input type="text" v-model="personal.school">
         <br>
         <label for="">男性</label>
-        <input type="radio" v-model="genderText" name="gender" value="男性">
+        <input type="radio" v-model="personal.gender" name="gender" value="男性">
         <label for="">女性</label>
-        <input type="radio" v-model="genderText" name="gender" value="女性">
+        <input type="radio" v-model="personal.gender" name="gender" value="女性">
         <br>
         <label for="">興趣</label>
-        <input type="text" v-model="personal[5]">
+        <input type="text" v-model="personal.favorite">
         <br>
         <button type="button" @click="changePage()">next</button>
     </div>
@@ -62,23 +71,23 @@ export default{
         <!-- 確認註冊帳戶資訊版面 -->
         <h1>使用者資訊</h1>
         <Label>姓名:</Label>
-        <p>{{ personal[0] }}</p>
+        <p>{{ personal.name }}</p>
         <Label>電話:</Label>
-        <p>{{ personal[1] }}</p>
+        <p>{{ personal.phone }}</p>
         <Label>E-mail:</Label>
-        <p>{{ personal[2] }}</p>
+        <p>{{ personal.email }}</p>
         <Label>地址:</Label>
-        <p>{{ personal[3] }}</p>
+        <p>{{ personal.address }}</p>
         <Label>畢業於:</Label>
-        <p>{{ personal[4] }}</p>
+        <p>{{ personal.school }}</p>
         <Label>性別:</Label>
-        <p>{{ genderText }}</p>
+        <p>{{ personal.gender }}</p>
         <Label>興趣:</Label>
-        <p>{{ personal[5] }}</p>
+        <p>{{ personal.favorite}}</p>
         <button type="button" @click="changePage2()">確定</button>
     </div>
     <div class="show">
-        <child :person="propsObj" />
+        <child :person="personal" />
     </div>
 </body>
 

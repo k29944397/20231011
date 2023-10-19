@@ -18,7 +18,8 @@ export default{
 
 <template>
     <nav class="topnav">
-        <RouterLink to="/">Home<br></RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <span>--</span>
         <RouterLink to="/VtextAndVModel" >Vtext&VModel</RouterLink>
         <span>--</span>
         <RouterLink to="/Vfor" >V-for</RouterLink>
@@ -34,6 +35,10 @@ export default{
         <RouterLink to="/HwHome" >HwHome</RouterLink>
         <span>--</span>
         <RouterLink to="/Props" >Props</RouterLink>
+        <span>--</span>
+        <RouterLink to="/Emit" >Emit</RouterLink>
+        <span>--</span>
+        <RouterLink to="/DataFlow" >DataFlow</RouterLink>
     </nav>
 
 </template>

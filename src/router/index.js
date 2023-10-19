@@ -58,6 +58,16 @@ const router = createRouter({
       name:'Props',
       component:()=>import('../views/Props.vue')
     },
+    {
+      path:"/Emit",
+      name:"Emit",
+      component:()=>import('../views/Emit.vue')
+    },
+    {
+      path:"/DataFlow",
+      name:"DataFlow",
+      component:()=>import('../views/DataFlow.vue')
+    }
     // {
     //   path:"/",
     //   name:"#",

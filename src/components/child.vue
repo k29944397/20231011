@@ -1,7 +1,8 @@
 <script>
 export default{
     props: [
-        "person"
+        "person",
+        "sign",
     ]
 }
 </script>
@@ -11,6 +12,9 @@ export default{
     <body>
         <div class="textshow">
             {{ this.person }}
+            <!-- {{ this.sign }}
+            <label for="">Name</label>
+            <input type="text" v-model="sign.name"> -->
         </div>
     </body>
 
