@@ -1,5 +1,4 @@
 <script setup>
-
 import Header from "./views/Header.vue"
 import {RouterLink,RouterView} from 'vue-router'
 </script>
@@ -8,9 +7,6 @@ import {RouterLink,RouterView} from 'vue-router'
   <div class="headerShow">
     <Header />
   </div>
-  <!-- <HomeView />
-  <VtextAndVModel />
-  <Vfor /> -->
   <div class="contentShow">
     <RouterView />
   </div>
