@@ -95,8 +95,8 @@ export default{
     margin: 20px;
     width: 800px;
     height: 100%;
-    column-gap: 50px;
-    column-count: 4;
+    column-gap: 50px;//
+    column-count: 4;//4個
     img{
         margin: 20px;
         width: 150px;

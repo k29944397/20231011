@@ -2,13 +2,13 @@
 export default{
     data(){
         return{
-            info:{
-                name:"",
-                year:"",
-            },
-            page:true,
+
         }
     },
+    props:[
+        "name",
+        "year"
+    ]
     // methods:{
     //     nextPage(){
     //         this.page = 2;
@@ -23,11 +23,13 @@ export default{
 <template>
     <div class="page2">
         <label for="">名字</label>
-        <p>{{ info.name }}</p>
+        <p>{{ this.name }}</p>
         <br>
         <label for="">年齡</label>
-        <p>{{ info.year }}</p>
+        <p>{{ this.year }}</p>
         <br>
+        <!-- <input type="text" name="" id="" :value="age" @input="$emit('update:age',$event.target.value)">
+        <button type="button" @click="console.log($event)">資料</button> -->
         <!-- <button type="button" @click="nextPage2">NextPage</button> -->
     </div>
 </template>

@@ -6,7 +6,6 @@ export default{
                 name:"",
                 year:"",
             },
-            page:false,
         }
     },
     methods:{
@@ -29,7 +28,7 @@ export default{
         <input type="number" v-model="info.year">
         <br>
 
-        <button type="button" @click="getInfo">up</button>
+        <button type="button" @click="getInfo">上傳並換頁</button>
 
         <!-- <button type="button" @click="nextPage">NextPage</button> -->
     </div>

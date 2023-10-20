@@ -14,10 +14,12 @@ export default{
         flowchild2
     },
     methods:{
-        infoGet(info){
-            this.obj = info;
+        infoGet(x){
+            this.obj = x;
+            this.page = !this.page;
         },
-        pageChange(){
+        pageChange(parm){
+            console.log(parm)
             this.page = !this.page;
         }
     }
@@ -29,12 +31,13 @@ export default{
     <div v-show="page == false" class="show">
         <p>C1</p>
         <flowchild1 @get="infoGet" />
-        <button type="button" @click="pageChange">pageChange</button>
+        <!-- <button type="button" @click="pageChange">pageChange</button> -->
     </div>
     <div v-show="page == true" class="show">
         <p>C2</p>
-        <flowchild2 @get="infoGet" />
-        <button type="button"  @click="pageChange">pageChange</button>
+        <flowchild2 :name="obj.name" :year="obj.year" :pageChan="pageChange" />
+        <!-- <flowchild2 v-bind="this.obj" :pageChan="pageChange"/> -->
+        <button type="button"  @click="pageChange">返回</button>
     </div>
 
 </template>
@@ -44,5 +47,6 @@ export default{
     height: 250px;
     width: 250px;
     border: 1px solid black;
+    text-align: center;
 }
 </style>
