@@ -13,7 +13,7 @@ export default{
     },
     methods:{
         signUp(){
-	        if(this.user.name.length == 0||this.user.password.length == 0){
+	        if(this.user.name == 0||this.user.password == 0){
 		        alert("請輸入帳號密碼");
 	        }
 
@@ -23,7 +23,7 @@ export default{
 		        alert("註冊成功");
                 // 註冊成功,自動回到登入
 		        // setTimeout(function(){
-		    	//     window.location.href = "index.html";
+		    	//     this.$router.push("/1022");
 		        // },1000);  //1秒
 	        }
         }
