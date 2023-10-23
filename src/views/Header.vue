@@ -39,6 +39,8 @@ export default{
         <RouterLink to="/Emit" >Emit</RouterLink>
         <span>--</span>
         <RouterLink to="/DataFlow" >DataFlow</RouterLink>
+        <span>--</span>
+        <RouterLink to="/1022" >1022</RouterLink>
     </nav>
 
 </template>

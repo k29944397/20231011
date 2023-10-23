@@ -1,5 +1,5 @@
 <script>
-import child2 from "./child2.vue"
+import child2 from "../components/child2.vue"
 export default{
     data(){
         return{

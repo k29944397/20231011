@@ -67,12 +67,22 @@ const router = createRouter({
       path:"/DataFlow",
       name:"DataFlow",
       component:()=>import('../views/DataFlow.vue')
+    },
+    {
+      path:"/1022",
+      name:"1022",
+      component:()=>import('../views/1022.vue')
+    },
+    {
+      path:"/1022SgUp",
+      name:"1022SgUp",
+      component:()=>import('../views/1022SgUp.vue')
+    },
+    {
+      path:"/1022main",
+      name:"1022main",
+      component:()=>import('../views/1022mainPage.vue')
     }
-    // {
-    //   path:"/",
-    //   name:"#",
-    //   component:()=>import('')
-    // }
   ]
 })
 
