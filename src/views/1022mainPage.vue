@@ -1,4 +1,30 @@
 <script>
+export default{
+    date(){
+        return{
+            totalp:0,
+            totalm:0,
+            totalpm:totalp+totalm,
+            plus:[],
+            minus:[]
+        }
+    },
+    methods:{
+        totalpp(){
+            for(let i = 0; i< plus.length;i++){
+                total += plus[i];
+            }
+        },
+        totalmm(){
+            for(let x = 0; x<minus.length;x++){
+                total2 += minus[x];
+            }
+        },
+        show(){
+            
+        }
+    }
+}
 </script>
 
 <template>
@@ -7,15 +33,24 @@
         <h1>Expense Tracker</h1>
         <h3>Kouhei</h3>
         <h4>YOUR BALANCE</h4>
-        <h5>$3,600</h5>
+        <h5 v-text="'$'+totalpm"></h5>
     </div>
     <div class="rightBody">
         <div class="rightBody_Top">
-            <h1 class="">INCOME<br>$7,800</h1>
-            <h2 class="">EXPENSE<br>$3,800</h2>
+            <h1 class="t1">INCOME
+                <h1 v-text="'$'+totalp"></h1>
+            </h1>
+            <h2 class="t2">EXPENSE
+                <h2 v-text="'$'+totalm"></h2>
+            </h2>
+        </div>
+        <div class="show">
+            <input type="text" name="" id="">
+            <input type="number" name="" id="">
+            <button>確定</button>
         </div>
         <div class="rightBody_B">
-            <button class="addBtn">Add transaction</button>
+            <button class="addBtn" @click="show">Add transaction</button>
             <div class="ie1">Breakfast $65.00 <button>DL</button><br></div>
             <div class="ie2">Lunch $90.00<button>DL</button><br></div>
             <div class="ie3">Design Case $100000.00<button>DL</button><br></div>
@@ -76,7 +111,6 @@ body{
     }
     h2{
         margin-top: 0;
-        margin-left: 30px;
         color: rgb(138,99,107);;
         display: flex;
         font-size: 24pt;
