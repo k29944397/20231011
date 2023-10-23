@@ -21,10 +21,6 @@ export default{
 		        localStorage.setItem(this.user.name,this.user.password);
                 this.$router.push("/1022");
 		        alert("註冊成功");
-                // 註冊成功,自動回到登入
-		        // setTimeout(function(){
-		    	//     this.$router.push("/1022");
-		        // },1000);  //1秒
 	        }
         }
     }
