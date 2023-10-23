@@ -116,6 +116,9 @@ body{
         font-size: 24pt;
     }
 }
+.show{
+    display: none;
+}
 .rightBody_B{
     margin-top: 0;
     padding-left: 20vw;
