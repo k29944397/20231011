@@ -2,13 +2,31 @@
 export default{
     data(){
         return{
-            
+            user:{
+                name: "",
+                password: "",
+            },
         }
     },
     components:{
         
     },
     methods:{
+        signUp(){
+	        if(this.user.name.length == 0||this.user.password.length == 0){
+		        alert("請輸入帳號密碼");
+	        }
+
+	        else{
+		        localStorage.setItem(this.user.name,this.user.password);
+                this.$router.push("/1022");
+		        alert("註冊成功");
+                // 註冊成功,自動回到登入
+		        // setTimeout(function(){
+		    	//     window.location.href = "index.html";
+		        // },1000);  //1秒
+	        }
+        }
     }
 }
 </script>
@@ -17,16 +35,14 @@ export default{
         <h1>Sign Up</h1>
         <div class="inpArea">
             <label for="">Account</label><br>
-            <input type="text" value="Placeholder/input text"><br>
+            <input type="text" v-model="user.name" placeholder="Placeholder/input text" id="reg_name"><br>
             <label for="">Password</label><br>
-            <input type="text" value="Placeholder/input text"><br>
-            <label for="">Repeat Password</label><br>
-            <input type="text" value="Placeholder/input text"><br>
+            <input type="password" v-model="user.password" placeholder="Placeholder/input text" id="reg_password"><br>
         </div>
         <div class="btnArea">
-            <span><RouterLink to="/1022">Canel</RouterLink></span>
+            <button id=""><RouterLink to="/1022">Canel</RouterLink></button>
             <label for="">___</label>
-            <span><RouterLink to="/1022">Sign Up</RouterLink></span>
+            <button id="signBtn" v-on:click="signUp()">Sign Up</button>
         </div>
     </div>
 </template>
@@ -53,6 +69,9 @@ h1{
         border: 1px solid #fff;
         background-color: $maincolor;
     }
+    input::placeholder{
+        color: #fff;
+    }
 }
 .btnArea{
     a{text-decoration:none}
@@ -66,7 +85,8 @@ h1{
     label{
         color: $maincolor;
     }
-    span{
+    button{
+        color: $maincolor;
         font-size: 16pt;
         background-color:#fff;
         border-radius:8.7%;

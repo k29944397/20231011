@@ -103,7 +103,7 @@ body{
     }
 }
 .ie1{
-    height: 20px;
+    height: 30px;
     width: 250px;
     margin: 0;
     color: $maincolor;
@@ -112,7 +112,7 @@ body{
     
 }
 .ie2{
-    height: 20px;
+    height: 30px;
     width: 250px;
     margin: 0;
     color: $maincolor;
@@ -120,7 +120,7 @@ body{
     border-radius:10%;
 }
 .ie3{
-    height: 20px;
+    height: 30px;
     width: 250px;
     margin: 0;
     color: $maincolor;
@@ -128,7 +128,7 @@ body{
     border-radius:10%;
 }
 .ie4{
-    height: 20px;
+    height: 30px;
     width: 250px;
     margin: 0;
     color: $maincolor;
