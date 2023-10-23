@@ -41,6 +41,8 @@ export default{
         <RouterLink to="/DataFlow" >DataFlow</RouterLink>
         <span>--</span>
         <RouterLink to="/1022" >1022</RouterLink>
+        <span>--</span>
+        <RouterLink to="/Provide" >Provide</RouterLink>
     </nav>
 
 </template>

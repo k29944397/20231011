@@ -1,5 +1,5 @@
 <script>
-import flowchild1 from "../components/flowchild1.vue";
+import flowchild1 from "../components/Flowchild1.vue";
 import flowchild2 from "../components/Flowchild2.vue";
 export default{
     data(){
