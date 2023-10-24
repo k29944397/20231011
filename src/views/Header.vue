@@ -40,7 +40,7 @@ export default{
         <span>--</span>
         <RouterLink to="/DataFlow" >DataFlow</RouterLink>
         <span>--</span>
-        <RouterLink to="/1022" >記帳</RouterLink>
+        <RouterLink to="/1022" >沒有記帳</RouterLink>
         <span>--</span>
         <RouterLink to="/Provide" >Provide</RouterLink>
     </nav>

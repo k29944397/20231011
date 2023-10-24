@@ -127,7 +127,7 @@ body{
     padding-left: 20vw;
     height: 70vh;
     width: 60vw;
-    // background-color: #797979;
+    background-color: #797979;
     .addBtn{
         background-color: $maincolor;
         color: #FFF;
