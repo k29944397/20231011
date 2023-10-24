@@ -51,6 +51,7 @@ export default{
 <template>
     <p>Point : {{this.point}}</p>
     <p>ntd : {{ this.ntd }}</p>
+    <p></p>
     <div class="circle" @click="addPoint"></div>
 </template>
 
