@@ -43,6 +43,8 @@ export default{
         <RouterLink to="/1022" >沒有記帳</RouterLink>
         <span>--</span>
         <RouterLink to="/Provide" >Provide</RouterLink>
+        <span>--</span>
+        <RouterLink to="/WatchAndComputed">Watch</RouterLink>
     </nav>
 
 </template>
