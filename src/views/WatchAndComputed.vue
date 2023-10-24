@@ -20,6 +20,30 @@ export default{
         jyp(){
             return this.ntd *4.63;
         }
+    },
+    beforeCreate(){
+        console.log("beforeCreate"+this.point)
+    },
+    mounted(){
+        console.log("mounted"+this.point)
+    },
+    created(){
+        console.log("Create"+this.point)
+    },
+    beforeMount(){
+        console.log("brfore"+this.point)
+    },
+    beforeUpdate(){
+        console.log("berforeUpdata"+this.point)
+    },
+    updated(){
+        console.log("update"+this.point)
+    },
+    beforeUnmount(){
+        console.log("beforeUumount"+this.point)
+    },
+    unmounted(){
+        console.log("umounted"+this.point)
     }
 }
 </script>
