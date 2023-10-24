@@ -20,14 +20,17 @@ export default{
                 total2 += minus[x];
             }
         },
-        show(){
-            
-        }
+
     }
 }
 </script>
 
 <template>
+        <div class="add">
+            <input type="text" name="" id="">
+            <input type="number" name="" id="">
+            <button>確定</button>
+        </div>
     <body>
     <div class="leftBody">
         <h1>Expense Tracker</h1>
@@ -35,6 +38,7 @@ export default{
         <h4>YOUR BALANCE</h4>
         <h5 v-text="'$'+totalpm"></h5>
     </div>
+
     <div class="rightBody">
         <div class="rightBody_Top">
             <h1 class="t1">INCOME
@@ -44,13 +48,9 @@ export default{
                 <h2 v-text="'$'+totalm"></h2>
             </h2>
         </div>
-        <div class="show">
-            <input type="text" name="" id="">
-            <input type="number" name="" id="">
-            <button>確定</button>
-        </div>
+        <!-- 預計刪除改成props -->
         <div class="rightBody_B">
-            <button class="addBtn" @click="show">Add transaction</button>
+            <button class="addBtn">Add transaction</button>
             <div class="ie1">Breakfast $65.00 <button>DL</button><br></div>
             <div class="ie2">Lunch $90.00<button>DL</button><br></div>
             <div class="ie3">Design Case $100000.00<button>DL</button><br></div>
@@ -116,8 +116,11 @@ body{
         font-size: 24pt;
     }
 }
-.show{
+.add{
+    height: 100vh;
+    width: 100vw;
     display: none;
+    background-color: rgb(0,0,0, 0.5)
 }
 .rightBody_B{
     margin-top: 0;
