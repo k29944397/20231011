@@ -34,19 +34,21 @@ export default{
 </script>
 
 <template>
-        <div class="add">
-            <div class="addmain">
-                <label for="">text</label>
-                <input type="text" name="" id="">
-                <label for="">number</label>
-                <input type="number" name="" id="">
-                <label for="">收入</label>
-                <input type="radio" v-model="radio" name="income" value="plus">
-                <label for="">支出</label>
-                <input type="radio" v-model="radio" name="income" value="minus">
-                <button>確定</button>
-            </div>
+    <!-- 彈出視窗 -->
+    <div class="add">
+        <div class="addmain">
+            <label for="">text</label>
+            <input type="text" name="" id="">
+            <label for="">number</label>
+            <input type="number" name="" id="">
+            <label for="">收入</label>
+            <input type="radio" v-model="radio" name="income" value="plus">
+            <label for="">支出</label>
+            <input type="radio" v-model="radio" name="income" value="minus">
+            <button>確定</button>
         </div>
+    </div>
+    <!-- 本體 -->
     <body>
     <div class="leftBody">
         <h1>Expense Tracker</h1>
@@ -61,7 +63,8 @@ export default{
             <h2 class="t2">EXPENSE</h2>
             <!-- <p>{{ totalm }}</p> -->
             <button class="addBtn" @click="show()">Add transaction</button>
-        </div> 
+        </div>
+        <!-- 記帳子頁 -->
         <div class="rightBody_B">
             <child1022 />
         </div>
