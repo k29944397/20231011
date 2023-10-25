@@ -1,55 +1,80 @@
 <script>
-import child1022 from "../components/1022child.vue";
 export default{
-    date(){
+    data(){
         return{
-            totalp:0,
-            totalm:0,
-            totalpm:totalp+totalm,
+            value6:false,
+            newPro:'',
+            project:[
+                {
+                name:"",
+                money:0,
+                pm:true
+                }
+            ],
             plus:[],
             minus:[],
-            radio:{
-            },
+            totalp:0,
+            totalm:0
         }
     },
     methods:{
-        totalpp(){
-            for(let i = 0; i< plus.length;i++){
-                total += plus[i];
+        addshow(){
+            this.value6 = !this.value6;
+        },
+        addPro(){
+            this.project.push({ id:this.name, spend:this.money,inorout:this.pm})
+                if(this.pm = true){
+                    this.plus.push(this.money)
+                }else{
+                    this.minus.push(this.money)
+                }
+            console.log(this.plus)
+            console.log(this.minus)
+            this.newPro='';
+        },
+        totalPlus(){
+            let totalp=0;
+            for(var i = 0; i< this.plus.length;i++){
+                totalp += this.plus[i];
             }
+            console.log(totalp)
         },
-        totalmm(){
-            for(let x = 0; x<minus.length;x++){
-                total2 += minus[x];
+        totalMinus(){
+            let totalm=0;
+            for(var x = 0; x< this.minus.length;x++){
+                totalm += this.minus[x];
             }
+            console.log(totalm)
         },
-        show(){
-            add.style.visibility = "visible";
-        },
-    },
-    components:{
-        child1022
+        addDl(key){
+            this.project.splice(key,1);
+        }
     }
 }
+
 </script>
 
-<template>
+<template>  
     <!-- 彈出視窗 -->
+    <div v-show="value6" >
     <div class="add">
         <div class="addmain">
             <label for="">text</label>
-            <input type="text" name="" id="">
+            <input type="text" v-model="name" placeholder="項目">
             <label for="">number</label>
-            <input type="number" name="" id="">
+            <input type="number"  v-model="money" placeholder="資金">
             <label for="">收入</label>
-            <input type="radio" v-model="radio" name="income" value="plus">
+            <input type="radio" v-model="pm" name="income" value="true">
             <label for="">支出</label>
-            <input type="radio" v-model="radio" name="income" value="minus">
-            <button>確定</button>
+            <input type="radio" v-model="pm" name="income" value="false">
+            <button @click="addPro(),addshow()">確定</button>
+            <button @click="addshow()">關閉</button>
         </div>
+    </div>
     </div>
     <!-- 本體 -->
     <body>
+
     <div class="leftBody">
         <h1>Expense Tracker</h1>
         <h3>Kouhei</h3>
@@ -59,14 +84,21 @@ export default{
     <div class="rightBody">
         <div class="rightBody_Top">
             <h1 class="t1">INCOME</h1>
+            <button class="t1btn" @click="totalPlus()">++</button>
             <!-- <p>{{ totalp }}</p> -->
             <h2 class="t2">EXPENSE</h2>
+            <button class="t1btn" @click="totalMinus()">--</button>
             <!-- <p>{{ totalm }}</p> -->
-            <button class="addBtn" @click="show()">Add transaction</button>
+            <button class="addBtn" @click="addshow()">Add transaction</button>
         </div>
         <!-- 記帳子頁 -->
         <div class="rightBody_B">
-            <child1022 />
+            <div v-for="i in project">
+                <p>NAME:{{ i.id }}</p>
+                <p>Money:{{ i.spend }}</p>
+                <p>這是{{ i.inorout }}</p>
+                <button @click="addDl()">DL</button>
+            </div>
         </div>
     </div>
 </body>
@@ -112,7 +144,7 @@ body{
     height: 1000px;
     position: relative;
     display: flex;
-    button{
+    .addBtn{
         top: 150px;
         position: absolute;
         background-color:  rgb(55,123,170);
@@ -141,9 +173,13 @@ body{
         display: flex;
         font-size: 24pt;
     }
+    .t1btn{
+        height: 25px;
+        width: 30px;
+    }
 }
 .add{
-    visibility:hidden;
+    // visibility:hidden;
     background-position: center center;
     background-size: cover;
     position: absolute;

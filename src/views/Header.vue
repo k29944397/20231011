@@ -1,5 +1,7 @@
 <script>
-import {RouterLink} from 'vue-router'
+import { mapState, mapActions } from 'pinia';
+import {RouterLink} from 'vue-router';
+import indexState from '../stores/indexState';
 export default{
     data(){
         //值
@@ -10,7 +12,12 @@ export default{
     },
     methods:{
         //公式
-        
+    },
+    computed:{
+        ...mapState(indexState, ["location", "locationInfo"])
+    },
+    methods:{
+        ...mapActions(indexState, ["getLocation", "setLocation"])
     }
 }
 
@@ -45,6 +52,8 @@ export default{
         <RouterLink to="/Provide" >Provide</RouterLink>
         <span>--</span>
         <RouterLink to="/WatchAndComputed">Watch</RouterLink>
+        <span>--</span>
+        <RouterLink to="/PPinia">Pinia</RouterLink>
     </nav>
 
 </template>

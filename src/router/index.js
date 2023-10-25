@@ -92,6 +92,11 @@ const router = createRouter({
       path:"/WatchAndComputed",
       name:"WatchAndComputed",
       component:()=>import('../views/WatchAndComputed.vue')
+    },
+    {
+      path:"/PPinia",
+      name:"PPinia",
+      component:()=>import('../views/PPinia.vue')
     }
   ]
 })
