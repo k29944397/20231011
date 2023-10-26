@@ -8,13 +8,14 @@ export default{
                 {
                 name:"",
                 money:0,
-                pm:true
+                pm:true,
+                inex:"支出"
                 }
             ],
             plus:[],
             minus:[],
             totalp:0,
-            totalm:0
+            totalm:0,
         }
     },
     methods:{
@@ -22,32 +23,37 @@ export default{
             this.value6 = !this.value6;
         },
         addPro(){
-            this.project.push({ id:this.name, spend:this.money,inorout:this.pm})
-                if(this.pm = true){
-                    this.plus.push(this.money)
+            this.project.push({ id:this.name, spend:this.money,inorout:this.pm,inEX:this.inex})
+                if(this.pm == true){
+                    this.plus.push(this.money);
+                    this.inex ="收入";
+                    console.log("plus:"+this.plus);
                 }else{
-                    this.minus.push(this.money)
+                    this.minus.push(this.money);
+                    this.inex ="支出";
+                    console.log(this.pm);
+                    console.log("minus:"+this.minus);
                 }
-            console.log(this.plus)
-            console.log(this.minus)
+
+            console.log(this.pm)
             this.newPro='';
         },
         totalPlus(){
-            let totalp=0;
-            for(var i = 0; i< this.plus.length;i++){
-                totalp += this.plus[i];
+            this.totalp = 0;
+            for(let i = 0; i< this.plus.length;i++){
+                this.totalp += this.plus[i];
             }
-            console.log(totalp)
         },
         totalMinus(){
-            let totalm=0;
-            for(var x = 0; x< this.minus.length;x++){
-                totalm += this.minus[x];
+            this.totalm = 0;
+            for(let x = 0; x< this.minus.length;x++){
+                this.totalm += this.minus[x];
             }
-            console.log(totalm)
         },
         addDl(key){
-            this.project.splice(key,1);
+            this.project.splice(this.key);
+            this.plus = [];
+            this.minus = [];
         }
     }
 }
@@ -64,10 +70,10 @@ export default{
             <label for="">number</label>
             <input type="number"  v-model="money" placeholder="資金">
             <label for="">收入</label>
-            <input type="radio" v-model="pm" name="income" value="true">
+            <input type="radio" v-model="pm" id="income" value="true">
             <label for="">支出</label>
-            <input type="radio" v-model="pm" name="income" value="false">
-            <button @click="addPro(),addshow()">確定</button>
+            <input type="radio" v-model="pm" id="expense" value="false">
+            <button @click="addPro(),addshow(),totalPlus(),totalMinus()">確定</button>
             <button @click="addshow()">關閉</button>
         </div>
     </div>
@@ -79,25 +85,27 @@ export default{
         <h1>Expense Tracker</h1>
         <h3>Kouhei</h3>
         <h4>YOUR BALANCE</h4>
-        <h5 v-text="'$'+totalpm"></h5>
+        <h5 v-text="'$'+(totalp-totalm)"></h5>
+        <h6>問題:收入支出if(t)/else(f)只有會往f跑</h6>
+        <h6>問題:刪除單筆資料</h6>
     </div>
     <div class="rightBody">
         <div class="rightBody_Top">
             <h1 class="t1">INCOME</h1>
-            <button class="t1btn" @click="totalPlus()">++</button>
-            <!-- <p>{{ totalp }}</p> -->
+            <!-- <button class="t1btn" @click="totalPlus()">++</button> -->
+            <p>{{ this.totalp }}</p>
             <h2 class="t2">EXPENSE</h2>
-            <button class="t1btn" @click="totalMinus()">--</button>
-            <!-- <p>{{ totalm }}</p> -->
+            <!-- <button class="t1btn" @click="totalMinus()">--</button> -->
+            <p>{{ this.totalm }}</p>
             <button class="addBtn" @click="addshow()">Add transaction</button>
+            <button class="dlBtn" @click="addDl(),totalPlus(),totalMinus()">刪除全部資料</button>
         </div>
         <!-- 記帳子頁 -->
         <div class="rightBody_B">
-            <div v-for="i in project">
+            <div class="boxArea" v-for="i in project">
                 <p>NAME:{{ i.id }}</p>
                 <p>Money:{{ i.spend }}</p>
-                <p>這是{{ i.inorout }}</p>
-                <button @click="addDl()">DL</button>
+                <p>{{ i.inEX }}</p>
             </div>
         </div>
     </div>
@@ -151,6 +159,14 @@ body{
         color: #fff;
         border-radius:15%;
     }
+    .dlBtn{
+        top: 150px;
+        right: 0px;
+        position: absolute;
+        background-color:  rgb(55,123,170);
+        color: #fff;
+        border-radius:15%;
+    }
 }
 .rightBody_Top{
     position: absolute;
@@ -189,7 +205,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 1;
     backdrop-filter: opacity(100%);
     .addmain{
         display: flex;
@@ -198,7 +214,7 @@ body{
         background-color: #FFF;
         height: 400px;
         width: 600px;
-        z-index: 1;
+        z-index: 2;
     }
 }
 .rightBody_B{
@@ -220,6 +236,16 @@ body{
         background-color: $maincolor;
         color: #FFF;
         border-radius:10%;
+    }
+    .boxArea{
+        border-radius:10%;
+        height: 120px;
+        width: auto;
+        background-color: rgb(170, 182, 231);
+        border: 1px solid #000;
+        color: #FFF;
+        font-weight: bold;
+        margin: 1px;
     }
 }
 </style>
