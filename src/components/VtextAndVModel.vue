@@ -11,6 +11,7 @@ export default{
                 name:"Jojo",
                 age:13,
             },
+            checkedNames: [],
             //V-model(類型)
             cool:'',
             age:16,
@@ -32,13 +33,13 @@ export default{
 </script>
 
 <template>
-    <!-- <div class="showContent"> -->
-        <h1>V-text</h1>
+    <h1>V-text</h1>
         <p>{{ this.title }}</p>
         <p v-text="address"></p>
         <p v-text="info"></p>
         <test v-text="info"/>
-        <h1>V-Model</h1>
+
+    <h1>V-Model</h1>
         <input type="text" v-model="cool">
         <h4>{{ this.cool }}</h4>
         <input type="number" v-model="age">
@@ -50,11 +51,16 @@ export default{
         </select>
     <div>{{ selectText }}</div>
 
-        <!-- <input type="checkbox" v-model="toggle" true-value="yes" false-value="no" />
-        <input type="checkbox" v-model="toggle" :true-value="dynamicTrueValue" :false-value="dynamicFalseValue" />
-        <input type="radio" v-model="pick" value="first" />
-        <input type="radio" v-model="pick" value="second" /> -->
-    <!-- </div> -->
+    <!-- Checkbox -->
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <div>Checked names: {{ checkedNames }}</div>
+
+    <!-- radio的name要一樣不然會被分開 -->
     <p>radio↓</p>
     <label for="">早餐</label>
     <input type="radio" v-model="radioText" name="food" value="pork">

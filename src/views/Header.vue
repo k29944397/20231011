@@ -27,9 +27,9 @@ export default{
     <nav class="topnav">
         <RouterLink to="/">Home</RouterLink>
         <span>--</span>
-        <RouterLink to="/VtextAndVModel" >Vtext&VModel</RouterLink>
-        <span>--</span>
         <RouterLink to="/Vfor" >V-for</RouterLink>
+        <span>--</span>
+        <RouterLink to="/VtextAndVModel" >Vtext&VModel</RouterLink>
         <span>--</span>
         <RouterLink to="/Von" >V-on</RouterLink>
         <span>--</span>
@@ -39,7 +39,7 @@ export default{
         <span>--</span>
         <RouterLink to="/vifAndvshow" >V-if&V-show</RouterLink>
         <span>--</span>
-        <RouterLink to="/HwHome" >HwHome</RouterLink>
+        <span><del>房地產</del></span>
         <span>--</span>
         <RouterLink to="/Props" >Props</RouterLink>
         <span>--</span>
@@ -47,7 +47,7 @@ export default{
         <span>--</span>
         <RouterLink to="/DataFlow" >DataFlow</RouterLink>
         <span>--</span>
-        <RouterLink to="/1022" >沒有記帳</RouterLink>
+        <RouterLink to="/1022" >記帳</RouterLink>
         <span>--</span>
         <RouterLink to="/Provide" >Provide</RouterLink>
         <span>--</span>
@@ -63,7 +63,7 @@ export default{
     height: 100%;
     width: 100%;
     font-size: 24pt;
-    background-color: aquamarine;
+    background-color: rgb(77, 212, 167);
     color: #fff;
     &:hover{
     background-color: #f7b606;

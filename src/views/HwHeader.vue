@@ -64,6 +64,7 @@ a{text-decoration:none}
 a:hover{text-decoration:none}
 
 .topnav{
+    white-space:nowrap; 
     margin: 0;
     position: relative;
     height: 15vh;

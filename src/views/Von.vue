@@ -24,7 +24,7 @@ export default{
         console.log(resNum)
         console.log(this.ansNum)
             if(resNum == this.ansNum){
-                showText.innerText = "答對了";
+                showText.innerText = ("答對了答案是"+this.ansNum);
                 return;
             }
             else if(resNum > this.ansNum){
@@ -80,6 +80,7 @@ export default{
     justify-content: center;
     align-items: center;
     .gameArea{
+        position: relative;
         width: 300px;
         height: 300px;
         display: flex;
@@ -89,7 +90,15 @@ export default{
         border-radius: 20px;
         box-shadow: 5px 5px 5px black;
     }
+    input{
+        position: absolute;
+        left: 10px;
+        bottom: 30px;
+    }
     .ansBtn{
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
         background-color: rgb(100, 110, 5);
         color: #fff;
         border-radius: 20%;

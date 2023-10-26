@@ -6,6 +6,7 @@ export default{
             isRed:false,
             isLarge:false,
             styleArr:[],
+            //圖片可以先宣告好，便於整理後面的程式碼
             imgText:"https://th.bing.com/th/id/OIP.DfvcS-BqyBkzj_UvWaIfQAAAAA?pid=ImgDet&rs=1",
             imgArr:["../../pic/1.png","../../pic/2.png","../../pic/3.png","../../pic/4.png","../../pic/5.png","../../pic/6.png","../../pic/7.png","../../pic/8.png"],
         }
@@ -103,7 +104,7 @@ export default{
         height: 250px;
     }:hover{
             width: 155px;
-            height: 258px;
+            height: 250px;
         }
 }
 label{

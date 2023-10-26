@@ -19,27 +19,33 @@ export default{
 }
 </script>
 <template>
-    <h1>V-for</h1>
+    <body>
+        <h1>V-for</h1>
     <!-- figma/Frame3 -->
-    <!-- arr -->
+    arr
     <div class="boxArea3">
         <p class="ppp" v-for="item in arr">{{ item }}</p>
     </div>
-    <!-- arr2 -->
-    <!-- <ol v-for="x in arr2">
+    arr2
+    <ol v-for="x in arr2">
         <li>{{ x.name }}</li>
         <li>{{ x.age }}</li>
         <li>{{ x.address }}</li>
-    </ol> -->
-    <div class="area2">
+    </ol>
+    <!-- <div class="area2">
         <h2>PINK</h2>
         <div class="area3">
             <h3>在Vue.js安裝Bootstrap<br> 1.CMD輸入npm install bootstrap @popperjs/core <br> 2.</h3>
         </div>
-    </div>
+    </div> -->
+    </body>
+    
 
 </template>
 <style lang="scss" scoped>
+body{
+    text-align: center;
+}
 .boxArea3{
     display: flex;
     justify-content: center;
