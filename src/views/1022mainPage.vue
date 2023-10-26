@@ -8,7 +8,7 @@ export default{
                 {
                 name:"",
                 money:0,
-                pm:true,
+                pm:"true",
                 inex:"支出"
                 }
             ],
@@ -16,6 +16,7 @@ export default{
             minus:[],
             totalp:0,
             totalm:0,
+
         }
     },
     methods:{
@@ -24,18 +25,18 @@ export default{
         },
         addPro(){
             this.project.push({ id:this.name, spend:this.money,inorout:this.pm,inEX:this.inex})
-                if(this.pm == true){
+                if(this.pm == "true"){
                     this.plus.push(this.money);
                     this.inex ="收入";
-                    console.log("plus:"+this.plus);
                 }else{
                     this.minus.push(this.money);
                     this.inex ="支出";
-                    console.log(this.pm);
-                    console.log("minus:"+this.minus);
                 }
+                console.log(this.project)
+                console.log("pm:"+this.pm);
+                console.log("minus:"+this.minus);
+                console.log("plus:"+this.plus);
 
-            console.log(this.pm)
             this.newPro='';
         },
         totalPlus(){
@@ -70,9 +71,9 @@ export default{
             <label for="">number</label>
             <input type="number"  v-model="money" placeholder="資金">
             <label for="">收入</label>
-            <input type="radio" v-model="pm" id="income" value="true">
+            <input type="radio" v-model="pm" name="income" value="true">
             <label for="">支出</label>
-            <input type="radio" v-model="pm" id="expense" value="false">
+            <input type="radio" v-model="pm" name="income" value="false">
             <button @click="addPro(),addshow(),totalPlus(),totalMinus()">確定</button>
             <button @click="addshow()">關閉</button>
         </div>
@@ -86,7 +87,7 @@ export default{
         <h3>Kouhei</h3>
         <h4>YOUR BALANCE</h4>
         <h5 v-text="'$'+(totalp-totalm)"></h5>
-        <h6>問題:收入支出if(t)/else(f)只有會往f跑</h6>
+        <h6>問題:inex顯示慢一個矩陣位置</h6>
         <h6>問題:刪除單筆資料</h6>
     </div>
     <div class="rightBody">
@@ -103,9 +104,9 @@ export default{
         <!-- 記帳子頁 -->
         <div class="rightBody_B">
             <div class="boxArea" v-for="i in project">
-                <p>NAME:{{ i.id }}</p>
-                <p>Money:{{ i.spend }}</p>
-                <p>{{ i.inEX }}</p>
+                <p>NAME：{{ i.id }}</p>
+                <p>Money：{{ i.spend }}</p>
+                <p>收支：{{ i.inEX }}</p>
             </div>
         </div>
     </div>
