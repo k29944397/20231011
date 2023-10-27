@@ -30,6 +30,7 @@ export default{
     <p v-if="info == 1">畢業於 實踐大學 資訊科技與通訊學系</p>
     <p v-else-if="info == 2">日檢N3<br>網頁程式設計-專業級(HTML5)</p>
     <p v-else>姓名:江修輔</p>
+    
   </body>
 </template>
 

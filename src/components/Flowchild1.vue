@@ -30,8 +30,7 @@ export default{
 
         <button type="button" @click="getInfo">上傳並換頁</button>
 
-        <!-- <button type="button" @click="nextPage">NextPage</button> -->
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>

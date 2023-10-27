@@ -31,12 +31,11 @@ export default{
     <div v-show="page == false" class="show">
         <p>C1</p>
         <flowchild1 @get="infoGet" />
-        <!-- <button type="button" @click="pageChange">pageChange</button> -->
     </div>
     <div v-show="page == true" class="show">
         <p>C2</p>
         <flowchild2 :name="obj.name" :year="obj.year" :pageChan="pageChange" />
-        <!-- <flowchild2 v-bind="this.obj" :pageChan="pageChange"/> -->
+        <!-- =<flowchild2 v-bind="this.obj" :pageChan="pageChange"/> -->
         <button type="button"  @click="pageChange">返回</button>
     </div>
 

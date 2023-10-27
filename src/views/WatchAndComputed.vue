@@ -16,7 +16,7 @@ export default{
             this.ntd = this.point *10;
         }
     },
-    components:{
+    computed:{
         jyp(){
             return this.ntd *4.63;
         }
@@ -51,7 +51,7 @@ export default{
 <template>
     <p>Point : {{this.point}}</p>
     <p>ntd : {{ this.ntd }}</p>
-    <p></p>
+    <p>jyp : {{ this.jyp }} </p>
     <div class="circle" @click="addPoint"></div>
 </template>
 
